@@ -1,12 +1,17 @@
+"use client";
+
+import { useTheme } from "@/libs/theme";
 import React from "react";
 
 const Header: React.FC = () => {
+  const {theme, toggleTheme } = useTheme()
+
   return (
     <header className="bg-blue-700 p-4">
       <div className="flex justify-between items-center">
         <h1 className="text-white m-0">My Website</h1>
 
-        <div className="flex gap-4">
+        <nav className="flex gap-4">
           <a
             href="/"
             className="bg-transparent text-white border-none cursor-pointer text-lg"
@@ -37,8 +42,12 @@ const Header: React.FC = () => {
           >
             Contact
           </a>
+        </nav>
+        
+        <div onClick={() => toggleTheme()}>
+          {theme}
+
         </div>
-        <div />
       </div>
     </header>
   );
