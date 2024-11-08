@@ -1,9 +1,11 @@
-import Image from "next/image";
+import HeroSection from "@/components/landing/HeroSection";
 
 export default function Home() {
   return (
     <div>
-      <div className="p-4">
+      <div className="">
+
+        <HeroSection />
         <h1>Innovative Software Solutions for your Business Needs</h1>
 
         <h2>Our mission is to empower businesses and solve their tech problems.</h2>

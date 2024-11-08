@@ -1,6 +1,7 @@
 "use client";
 
 import { useTheme } from "@/libs/theme";
+import Link from "next/link";
 import React from "react";
 
 const Header: React.FC = () => {
@@ -12,36 +13,36 @@ const Header: React.FC = () => {
         <h1 className="text-white m-0">My Website</h1>
 
         <nav className="flex gap-4">
-          <a
+          <Link
             href="/"
             className="bg-transparent text-white border-none cursor-pointer text-lg"
           >
             Home
-          </a>
-          <a
+          </Link>
+          <Link
             href="/about"
             className="bg-transparent text-white border-none cursor-pointer text-lg"
           >
             About
-          </a>
-          <a
+          </Link>
+          <Link
             href="/about"
             className="bg-transparent text-white border-none cursor-pointer text-lg"
           >
             Portfolio
-          </a>
-          <a
+          </Link>
+          <Link
             href="/services"
             className="bg-transparent text-white border-none cursor-pointer text-lg"
           >
             Services
-          </a>
-          <a
+          </Link>
+          <Link
             href="/contact"
             className="bg-transparent text-white border-none cursor-pointer text-lg"
           >
             Contact
-          </a>
+          </Link>
         </nav>
         
         <div onClick={() => toggleTheme()}>

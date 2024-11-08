@@ -1,0 +1,236 @@
+{
+    "asset": {
+        "version": "2.0",
+        "generator": "Open Asset Import Library (assimp v5.4.0)"
+    },
+    "extensionsUsed": [
+        "KHR_materials_volume",
+        "FB_ngon_encoding"
+    ],
+    "accessors": [
+        {
+            "bufferView": 0,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 22640,
+            "type": "VEC3",
+            "max": [
+                1.9728795289993286,
+                0.1968500018119812,
+                0.5183749794960022
+            ],
+            "min": [
+                -1.9685050249099731,
+                -0.1968500018119812,
+                -0.5227494239807129
+            ]
+        },
+        {
+            "bufferView": 1,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 22640,
+            "type": "VEC3",
+            "max": [
+                0.9999383687973022,
+                0.9999383687973022,
+                1.0
+            ],
+            "min": [
+                -0.9999383687973022,
+                -0.9999383687973022,
+                0.007856534793972969
+            ]
+        },
+        {
+            "bufferView": 2,
+            "byteOffset": 0,
+            "componentType": 5125,
+            "count": 82470,
+            "type": "SCALAR",
+            "max": [
+                22639
+            ],
+            "min": [
+                0
+            ]
+        },
+        {
+            "bufferView": 3,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 12317,
+            "type": "VEC3",
+            "max": [
+                1.9728795289993286,
+                -0.1968500018119812,
+                0.5183749794960022
+            ],
+            "min": [
+                -1.9685050249099731,
+                -0.1968500018119812,
+                -0.5227494239807129
+            ]
+        },
+        {
+            "bufferView": 4,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 12317,
+            "type": "VEC3",
+            "max": [
+                0.0,
+                0.0,
+                -1.0
+            ],
+            "min": [
+                0.0,
+                0.0,
+                -1.0
+            ]
+        },
+        {
+            "bufferView": 5,
+            "byteOffset": 0,
+            "componentType": 5125,
+            "count": 60420,
+            "type": "SCALAR",
+            "max": [
+                12316
+            ],
+            "min": [
+                0
+            ]
+        }
+    ],
+    "buffers": [
+        {
+            "byteLength": 1410528,
+            "uri": "ImageToStl.bin"
+        }
+    ],
+    "bufferViews": [
+        {
+            "buffer": 0,
+            "byteOffset": 0,
+            "byteLength": 271680,
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteOffset": 271680,
+            "byteLength": 271680,
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteOffset": 543360,
+            "byteLength": 329880,
+            "target": 34963
+        },
+        {
+            "buffer": 0,
+            "byteOffset": 873240,
+            "byteLength": 147804,
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteOffset": 1021044,
+            "byteLength": 147804,
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteOffset": 1168848,
+            "byteLength": 241680,
+            "target": 34963
+        }
+    ],
+    "materials": [
+        {
+            "name": "x1",
+            "pbrMetallicRoughness": {
+                "baseColorFactor": [
+                    0.8500000238418579,
+                    0.8500000238418579,
+                    0.8500000238418579,
+                    1.0
+                ],
+                "metallicFactor": 0.05000000074505806,
+                "roughnessFactor": 0.5
+            },
+            "doubleSided": true
+        }
+    ],
+    "meshes": [
+        {
+            "name": "meshes[0]",
+            "primitives": [
+                {
+                    "mode": 4,
+                    "material": 0,
+                    "indices": 2,
+                    "attributes": {
+                        "POSITION": 0,
+                        "NORMAL": 1
+                    }
+                }
+            ]
+        },
+        {
+            "name": "meshes[1]",
+            "primitives": [
+                {
+                    "mode": 4,
+                    "material": 0,
+                    "indices": 5,
+                    "attributes": {
+                        "POSITION": 3,
+                        "NORMAL": 4
+                    }
+                }
+            ]
+        }
+    ],
+    "nodes": [
+        {
+            "name": "ImageToStl.com_verj logo",
+            "children": [
+                1
+            ]
+        },
+        {
+            "name": "Node0",
+            "children": [
+                2,
+                3
+            ],
+            "extras": {
+                "name": "Node0"
+            }
+        },
+        {
+            "name": "Node1",
+            "mesh": 0,
+            "extras": {
+                "name": "Node1"
+            }
+        },
+        {
+            "name": "Node2",
+            "mesh": 1,
+            "extras": {
+                "name": "Node2"
+            }
+        }
+    ],
+    "scenes": [
+        {
+            "nodes": [
+                0
+            ]
+        }
+    ],
+    "scene": 0
+}
