@@ -5,6 +5,8 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --font-poppins: var(--font-poppins), sans-serif;
+  --font-glacial-indifference: var(--font-glacial-indifference), sans-serif;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -17,5 +19,12 @@
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-glacial-indifference);
+}
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-poppins);
+}
+.font-glacial-bold {
+  font-family: var(--font-glacial-indifference-bold); /* Use bold variant */
+  font-weight: 700;
 }
