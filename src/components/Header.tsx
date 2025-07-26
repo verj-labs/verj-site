@@ -1,56 +1,38 @@
 "use client";
 
-import { useTheme } from "@/libs/theme";
+import { useState } from "react";
 import Link from "next/link";
-import React from "react";
+import Image from "next/image";
+import NavbarItems from "./NavbarItems";
 
 const Header: React.FC = () => {
-  const {theme, toggleTheme } = useTheme()
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <>
-      <header className="bg-[#aaa] bg-opacity-30 backdrop-blur-lg p-4 fixed top-0 left-0 w-full h-16 z-40">
-        <div className="flex justify-between items-center">
-          <h1 className=" m-0">VERJ Labs</h1>
+    <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md border-b border-gray-200 dark:bg-gray-900/95 dark:border-gray-800 shadow-sm">
+      <div className="max-w-7xl mx-auto px-6">
+        <div className="flex justify-between items-center h-16 relative">
+          {/* Logo */}
+          <Link href="/" className="flex items-center space-x-3 flex-shrink-0">
+            <div className="relative w-8 h-8">
+              <Image
+                src="/verj_logo.svg"
+                alt="Verj Labs Logo"
+                width={64}
+                height={32}
+                // className="object-contain"
+              />
+            </div>
+            <span className="text-xl font-bold text-gray-900 dark:text-white font-poppins">
+              Labs
+            </span>
+          </Link>
 
-          <nav className="flex gap-4">
-            <Link
-              href="/"
-              className="bg-transparent text-white border-none cursor-pointer text-lg"
-            >
-              Home
-            </Link>
-            <Link
-              href="/about"
-              className="bg-transparent text-white border-none cursor-pointer text-lg"
-            >
-              About
-            </Link>
-            <Link
-              href="/portfolio"
-              className="bg-transparent text-white border-none cursor-pointer text-lg"
-            >
-              Portfolio
-            </Link>
-            <Link
-              href="/services"
-              className="bg-transparent text-white border-none cursor-pointer text-lg"
-            >
-              Services
-            </Link>
-            <Link
-              href="/contact"
-              className="bg-transparent text-white border-none cursor-pointer text-lg"
-            >
-              Contact
-            </Link>
-          </nav>
-
-          <div onClick={() => toggleTheme()}>{theme}</div>
+          {/* Navigation Items */}
+          <NavbarItems isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
         </div>
-      </header>
-      <div className=" h-16"/>
-    </>
+      </div>
+    </header>
   );
 };
 

@@ -4,7 +4,7 @@
 
 :root {
   --font-poppins: var(--font-poppins), sans-serif;
-  --font-glacial-indifference: var(--font-glacial-indifference), sans-serif;
+  --font-lato: var(--font-lato), sans-serif;
 }
 
 /* @media (prefers-color-scheme: dark) {
@@ -19,16 +19,6 @@
   --foreground: #ededed;
 }
 
-body {
-  font-family: var(--font-glacial-indifference);
-}
-h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-poppins);
-}
-.font-glacial-bold {
-  font-family: var(--font-glacial-indifference-bold); /* Use bold variant */
-  font-weight: 700;
-}
 @layer base {
   :root {
     --background: 0 0% 100%;
@@ -84,11 +74,24 @@ h1, h2, h3, h4, h5, h6 {
     --chart-5: 340 75% 55%;
   }
 }
+
 @layer base {
   * {
     @apply border-border;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-lato;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-poppins;
+  }
+}
+
+@layer utilities {
+  .font-poppins {
+    font-family: var(--font-poppins), sans-serif;
+  }
+  .font-lato {
+    font-family: var(--font-lato), sans-serif;
   }
 }
