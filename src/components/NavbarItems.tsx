@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Sparkles } from "lucide-react";
 
 interface NavbarProps {
   isMenuOpen: boolean;
@@ -11,30 +11,34 @@ interface NavbarProps {
 const Navbar = ({ isMenuOpen, setIsMenuOpen }: NavbarProps) => {
   const navLinks = [
     { href: "/", label: "Home" },
+    { href: "/solutions", label: "Solutions" },
+    { href: "/pricing", label: "Pricing" },
     { href: "/about", label: "About" },
-    { href: "/services", label: "Services" },
-    { href: "/portfolio", label: "Portfolio" },
+    { href: "/blog", label: "Blog" },
     { href: "/contact", label: "Contact" },
   ];
 
   return (
     <>
       {/* Desktop Navigation */}
-      <div className="hidden md:flex items-center space-x-6">
+      <div className="hidden md:flex items-center space-x-8">
         {navLinks.map((link) => (
           <Link
             key={link.href}
             href={link.href}
-            className="text-gray-700 hover:text-primary dark:text-gray-300 dark:hover:text-primary transition-colors duration-200 font-medium font-lato"
+            className="relative text-verj-muted hover:text-verj-light transition-all duration-300 font-medium font-lato group"
           >
             {link.label}
+            {/* Modern underline effect */}
+            <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-violet-blue transition-all duration-300 group-hover:w-full" />
           </Link>
         ))}
         <Link
           href="/contact"
-          className="ml-4 bg-primary text-primary-foreground px-6 py-2 rounded-lg font-semibold hover:bg-primary/90 transition-colors duration-200 font-lato"
+          className="btn-primary flex items-center space-x-2 ml-6"
         >
-          Get Started
+          <Sparkles size={18} />
+          <span>Get Started</span>
         </Link>
       </div>
 
@@ -42,7 +46,7 @@ const Navbar = ({ isMenuOpen, setIsMenuOpen }: NavbarProps) => {
       <div className="md:hidden">
         <button
           onClick={() => setIsMenuOpen(!isMenuOpen)}
-          className="text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors duration-200"
+          className="relative p-3 text-verj-light hover:text-verj-violet transition-all duration-300 rounded-xl glass"
         >
           {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
@@ -50,25 +54,32 @@ const Navbar = ({ isMenuOpen, setIsMenuOpen }: NavbarProps) => {
 
       {/* Mobile Navigation */}
       {isMenuOpen && (
-        <div className="md:hidden absolute top-full left-0 right-0 bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-800 shadow-lg">
-          <div className="px-6 pt-2 pb-3 space-y-1">
-            {navLinks.map((link) => (
+        <div className="md:hidden absolute top-full left-0 right-0 glass border-t border-verj-violet/20 shadow-2xl shadow-verj-violet/20">
+          <div className="px-6 pt-4 pb-6 space-y-2">
+            {navLinks.map((link, index) => (
               <Link
                 key={link.href}
                 href={link.href}
-                className="block px-3 py-2 text-gray-700 hover:text-primary dark:text-gray-300 dark:hover:text-primary transition-colors duration-200 font-medium font-lato"
+                className="block px-4 py-3 text-verj-muted hover:text-verj-light hover:bg-verj-violet/20 transition-all duration-300 font-medium font-lato rounded-xl group"
                 onClick={() => setIsMenuOpen(false)}
+                style={{ animationDelay: `${index * 100}ms` }}
               >
-                {link.label}
+                <span className="flex items-center justify-between">
+                  {link.label}
+                  <span className="w-0 h-px bg-gradient-violet-blue transition-all duration-300 group-hover:w-6" />
+                </span>
               </Link>
             ))}
-            <Link
-              href="/contact"
-              className="block px-3 py-2 mt-4 bg-primary text-primary-foreground text-center rounded-lg font-semibold hover:bg-primary/90 transition-colors duration-200 font-lato"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              Get Started
-            </Link>
+            <div className="pt-4">
+              <Link
+                href="/contact"
+                className="btn-primary w-full flex items-center justify-center space-x-2"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                <Sparkles size={18} />
+                <span>Get Started</span>
+              </Link>
+            </div>
           </div>
         </div>
       )}

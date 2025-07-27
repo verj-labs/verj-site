@@ -14,6 +14,21 @@ export default {
         lato: ['var(--font-lato)', 'sans-serif'],
       },
       colors: {
+        // VERJ Labs Modern Color Palette
+        verj: {
+          // Primary backgrounds
+          'navy': '#0D0F24',
+          'purple': '#351C75',
+          // Accent colors
+          'violet': '#7F5AF0',
+          'blue': '#00D2FF',
+          'coral': '#FF6A76',
+          'green': '#5AFFA1',
+          // Text colors
+          'light': '#F2F2F2',
+          'muted': '#A6A8BD',
+        },
+        // Keep shadcn/ui compatibility
         background: 'hsl(var(--background))',
         foreground: 'hsl(var(--foreground))',
         card: {
@@ -53,6 +68,25 @@ export default {
           '3': 'hsl(var(--chart-3))',
           '4': 'hsl(var(--chart-4))',
           '5': 'hsl(var(--chart-5))'
+        }
+      },
+      backgroundImage: {
+        // Modern gradient combinations
+        'gradient-violet-blue': 'linear-gradient(135deg, #7F5AF0 0%, #00D2FF 100%)',
+        'gradient-coral-violet': 'linear-gradient(135deg, #FF6A76 0%, #7F5AF0 100%)',
+        'gradient-blue-green': 'linear-gradient(135deg, #00D2FF 0%, #5AFFA1 100%)',
+        'gradient-purple-violet': 'linear-gradient(135deg, #351C75 0%, #7F5AF0 100%)',
+        'gradient-radial': 'radial-gradient(ellipse at center, var(--tw-gradient-stops))',
+      },
+      animation: {
+        'float': 'float 6s ease-in-out infinite',
+        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+        'bounce-slow': 'bounce 3s infinite',
+      },
+      keyframes: {
+        float: {
+          '0%, 100%': { transform: 'translateY(0px)' },
+          '50%': { transform: 'translateY(-20px)' },
         }
       },
       borderRadius: {

@@ -31,10 +31,16 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${poppins.variable} ${lato.variable} antialiased flex flex-col min-h-screen bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100`}>
+      <body className={`${poppins.variable} ${lato.variable} antialiased flex flex-col min-h-screen bg-verj-navy text-verj-light overflow-x-hidden`}>
         <Header />
 
-        <main className="pt-16">
+        <main className="pt-20 relative">
+          {/* Background decorative elements */}
+          <div className="fixed inset-0 overflow-hidden pointer-events-none">
+            <div className="floating-shape w-96 h-96 bg-gradient-violet-blue rounded-full top-1/4 right-1/4 opacity-5 animate-float" />
+            <div className="floating-shape w-64 h-64 bg-gradient-coral-violet rounded-full bottom-1/4 left-1/4 opacity-5 animate-pulse-slow" />
+            <div className="floating-shape w-48 h-48 bg-gradient-blue-green rounded-full top-1/2 left-1/2 opacity-5 animate-bounce-slow" />
+          </div>
           {children}
         </main>
 
