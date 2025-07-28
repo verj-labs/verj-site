@@ -22,6 +22,21 @@ const lato = Lato({
 export const metadata: Metadata = {
   title: "Verj Labs - Digital Innovation Studio",
   description: "We build what we believe. We build what you need. A digital innovation studio where bold ideas become real products.",
+  icons: {
+    icon: [
+      { url: '/favicon/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
+      { url: '/favicon/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
+      { url: '/favicon/favicon.ico', sizes: 'any' }
+    ],
+    apple: [
+      { url: '/favicon/apple-touch-icon.png', sizes: '180x180', type: 'image/png' }
+    ],
+    other: [
+      { url: '/favicon/android-chrome-192x192.png', sizes: '192x192', type: 'image/png' },
+      { url: '/favicon/android-chrome-512x512.png', sizes: '512x512', type: 'image/png' }
+    ]
+  },
+  manifest: '/favicon/site.webmanifest'
 };
 
 export default function RootLayout({
@@ -35,12 +50,6 @@ export default function RootLayout({
         <Header />
 
         <main className="pt-20 relative">
-          {/* Background decorative elements */}
-          <div className="fixed inset-0 overflow-hidden pointer-events-none">
-            <div className="floating-shape w-96 h-96 bg-gradient-violet-blue rounded-full top-1/4 right-1/4 opacity-5 animate-float" />
-            <div className="floating-shape w-64 h-64 bg-gradient-coral-violet rounded-full bottom-1/4 left-1/4 opacity-5 animate-pulse-slow" />
-            <div className="floating-shape w-48 h-48 bg-gradient-blue-green rounded-full top-1/2 left-1/2 opacity-5 animate-bounce-slow" />
-          </div>
           {children}
         </main>
 
