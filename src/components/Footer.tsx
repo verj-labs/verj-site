@@ -75,9 +75,10 @@ const Footer: React.FC = () => {
                 </div>
 
                 <div className="border-t border-gray-800 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
-                    <p className="text-gray-400 font-lato text-sm">
-                        &copy; {new Date().getFullYear()} Verj Labs. All rights reserved.
-                    </p>
+                    <div className="text-gray-400 font-lato text-sm">
+                        <p>&copy; {new Date().getFullYear()} Verj Labs. All rights reserved.</p>
+                        <p className="text-xs opacity-75 mt-1">16930760 Canada Inc. operating as Verj Labs</p>
+                    </div>
                     <div className="mt-4 md:mt-0 space-x-6 font-lato text-sm">
                         <Link href="/privacy" className="text-gray-400 hover:text-white transition-colors">
                             Privacy Policy

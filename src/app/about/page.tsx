@@ -140,6 +140,9 @@ export default function About() {
                 If you're looking for flashy jargon and bloated agencies, we're probably not your fit. 
                 But if you want thoughtful builders who care about what they ship — welcome to Verj Labs.
               </p>
+              <p className="text-sm text-gray-300 mt-4 opacity-75">
+                16930760 Canada Inc. operating as Verj Labs
+              </p>
             </div>
 
             {/* Background Canadian-themed elements */}
