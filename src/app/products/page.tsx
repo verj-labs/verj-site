@@ -1,236 +1,189 @@
 import Link from "next/link";
-import { 
-  Compass, 
-  MapPin, 
-  Clock, 
-  ArrowRight,
-  Sparkles,
-  Users,
-  Star,
-  Bell,
-  Download,
-  Mail
-} from "lucide-react";
+import { FadeUp, StaggerGrid, StaggerItem } from "@/components/motion";
+import {
+  TbCompass, TbLayoutDashboard, TbDiamond,
+  TbMapPin, TbStar, TbUsers, TbBell,
+  TbArrowUpRight, TbArrowRight,
+} from "react-icons/tb";
+
+const products = [
+  {
+    name: "The Halal Compass",
+    url: "https://www.thehalalcompass.com",
+    urlLabel: "thehalalcompass.com",
+    tagline: "Find everything halal — near you.",
+    desc: "A one-stop consumer platform for the Muslim community. Discover halal restaurants, grocery stores, mosques, events, and gift shops through interactive maps, curated listings, and community-driven reviews.",
+    features: [
+      { icon: <TbMapPin size={15} className="text-teal" />, label: "Location-based discovery with maps" },
+      { icon: <TbStar size={15} className="text-teal" />, label: "Curated listings and community reviews" },
+      { icon: <TbUsers size={15} className="text-teal" />, label: "Community-driven recommendations" },
+      { icon: <TbBell size={15} className="text-teal" />, label: "Event notifications and updates" },
+    ],
+    stack: ["Next.js", "NestJS", "React Native", "PostgreSQL"],
+    glassVariant: "card-glass card-glass-teal",
+    iconColor: "text-teal",
+    iconBg: "bg-teal/10",
+    accentIcon: <TbCompass size={32} />,
+    badge: "badge-teal",
+    badgeLabel: "Consumer App",
+  },
+  {
+    name: "DealrDash",
+    url: "https://www.dealrdash.com",
+    urlLabel: "dealrdash.com",
+    tagline: "Dealer management software, built for scale.",
+    desc: "Multi-tenant DMS for car dealerships. A B2B platform covering inventory management, lead tracking, and sales reporting — all under one roof, accessible from anywhere.",
+    features: [
+      { icon: <TbLayoutDashboard size={15} className="text-purple" />, label: "Multi-tenant inventory management" },
+      { icon: <TbUsers size={15} className="text-purple" />, label: "Lead tracking and CRM" },
+      { icon: <TbStar size={15} className="text-purple" />, label: "Sales reporting and analytics" },
+      { icon: <TbBell size={15} className="text-purple" />, label: "Multi-location support" },
+    ],
+    stack: ["Next.js", "NestJS", "PostgreSQL", "TypeScript"],
+    glassVariant: "card-glass card-glass-purple",
+    iconColor: "text-purple",
+    iconBg: "bg-purple/10",
+    accentIcon: <TbLayoutDashboard size={32} />,
+    badge: "badge-purple",
+    badgeLabel: "B2B SaaS",
+  },
+  {
+    name: "Zavara Studio",
+    url: "https://www.zavarastudio.com",
+    urlLabel: "zavarastudio.com",
+    tagline: "AI-powered tools for jewelry businesses.",
+    desc: "AI-first SaaS built for jewelers who are tired of writing product descriptions and managing catalog data manually. Zavara handles it — AI-generated copy, automated client comms, and catalog sync.",
+    features: [
+      { icon: <TbStar size={15} className="text-lime" />, label: "AI product description generation" },
+      { icon: <TbDiamond size={15} className="text-lime" />, label: "Jewelry catalog management" },
+      { icon: <TbUsers size={15} className="text-lime" />, label: "Automated client communications" },
+      { icon: <TbBell size={15} className="text-lime" />, label: "AI-native from the ground up" },
+    ],
+    stack: ["Next.js", "AI/ML", "TypeScript", "Node.js"],
+    glassVariant: "card-glass card-glass-lime",
+    iconColor: "text-lime",
+    iconBg: "bg-lime/10",
+    accentIcon: <TbDiamond size={32} />,
+    badge: "badge-lime",
+    badgeLabel: "B2B SaaS",
+  },
+];
 
 export default function Products() {
   return (
     <div className="min-h-screen">
-      {/* Hero Section */}
-      <section className="spacing-section relative overflow-hidden">
-        <div className="max-w-4xl mx-auto px-6 text-center relative z-10">
-          <div className="animate-fade-in">
-            <div className="inline-flex items-center space-x-2 bg-verj-purple/50 border border-verj-violet/30 rounded-full px-6 py-3 mb-8">
-              <Sparkles className="text-verj-violet icon-medium" />
-              <span className="text-verj-light font-medium">Built by Verj Labs</span>
-            </div>
-            
-            <h1 className="text-scale-1 font-bold mb-8 gradient-text font-poppins">
-              Our Products
-            </h1>
-            <p className="text-xl md:text-2xl text-verj-muted max-w-3xl mx-auto leading-relaxed font-lato">
-              We're not just building for clients — we're also building for the world. 
-              Explore the digital products we've created in-house, tools designed to solve real problems.
+      {/* Hero */}
+      <section className="relative py-24 overflow-hidden px-6">
+        <div className="mesh-orb-lime absolute w-96 h-96 -top-24 -left-24 pointer-events-none" aria-hidden="true" />
+        <div className="mesh-orb-teal absolute w-80 h-80 top-10 right-0 pointer-events-none" aria-hidden="true" />
+
+        <div className="max-w-4xl mx-auto text-center relative z-10">
+          <FadeUp>
+            <p className="eyebrow mb-4">Built by Verj Labs</p>
+            <h1 className="text-scale-1 font-bricolage text-off-white mb-5">Our Products</h1>
+            <p className="text-[1.05rem] text-off-white/45 leading-[1.75] max-w-[500px] mx-auto font-light">
+              We don&apos;t just build for clients — we build for the world. Three live products, solving real problems.
             </p>
-          </div>
+          </FadeUp>
         </div>
       </section>
 
-      {/* Featured Product: The Halal Compass */}
-      <section className="spacing-section">
+      {/* Products */}
+      <section className="pb-16">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            
-            {/* Product Info */}
-            <div className="animate-slide-up">
-              <div className="flex items-center space-x-4 mb-6">
-                <div className="p-4 bg-verj-green/20 rounded-2xl">
-                  <Compass className="text-verj-green icon-large" />
-                </div>
-                <div>
-                  <h2 className="text-scale-2 font-bold text-white font-poppins">The Halal Compass</h2>
-                  <div className="inline-flex items-center space-x-2 bg-verj-coral/20 border border-verj-coral/30 rounded-full px-4 py-1 mt-2">
-                    <Clock className="text-verj-coral" size={16} />
-                    <span className="text-verj-coral font-medium text-sm">Coming Soon</span>
+          <StaggerGrid className="grid gap-6" staggerDelay={0.12}>
+            {products.map((p) => (
+              <StaggerItem key={p.name}>
+                <div className={`${p.glassVariant} grid lg:grid-cols-2 gap-10 items-center`}>
+                  {/* Info */}
+                  <div>
+                    <span className={`${p.badge} mb-4 inline-flex`}>{p.badgeLabel}</span>
+
+                    <div className="flex items-center gap-3 mb-4">
+                      <div className={`p-2.5 rounded-xl ${p.iconBg} ${p.iconColor}`}>
+                        {p.accentIcon}
+                      </div>
+                      <div>
+                        <h2 className="font-bricolage font-extrabold text-[1.5rem] text-off-white" style={{ letterSpacing: "-0.025em" }}>
+                          {p.name}
+                        </h2>
+                        <p className="text-[0.78rem] text-off-white/40 font-outfit">{p.tagline}</p>
+                      </div>
+                    </div>
+
+                    <p className="text-[0.9rem] text-off-white/45 leading-[1.7] mb-6 font-light">{p.desc}</p>
+
+                    <ul className="space-y-2.5 mb-6">
+                      {p.features.map((f) => (
+                        <li key={f.label} className="flex items-center gap-2.5">
+                          {f.icon}
+                          <span className="text-[0.82rem] text-off-white/55 font-light">{f.label}</span>
+                        </li>
+                      ))}
+                    </ul>
+
+                    <div className="flex flex-wrap gap-2 mb-6">
+                      {p.stack.map((t) => (
+                        <span key={t} className="tech-pill">{t}</span>
+                      ))}
+                    </div>
+
+                    <a
+                      href={p.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="btn-primary inline-flex items-center gap-2 text-sm"
+                    >
+                      Visit {p.name} <TbArrowUpRight size={16} />
+                    </a>
                   </div>
-                </div>
-              </div>
-              
-              <p className="text-xl text-verj-muted mb-8 font-lato leading-relaxed">
-                A one-stop app for everything halal — restaurants, grocery stores, mosques, events, and gift shops — all in one place. 
-                Find what's near you through maps, curated listings, and local ads that matter to your lifestyle.
-              </p>
-              
-              <div className="space-y-4 mb-8">
-                <div className="flex items-center space-x-3">
-                  <MapPin className="text-verj-blue icon-medium" />
-                  <span className="text-verj-light">Location-based discovery with maps</span>
-                </div>
-                <div className="flex items-center space-x-3">
-                  <Star className="text-verj-green icon-medium" />
-                  <span className="text-verj-light">Curated listings and reviews</span>
-                </div>
-                <div className="flex items-center space-x-3">
-                  <Users className="text-verj-coral icon-medium" />
-                  <span className="text-verj-light">Community-driven recommendations</span>
-                </div>
-                <div className="flex items-center space-x-3">
-                  <Bell className="text-verj-violet icon-medium" />
-                  <span className="text-verj-light">Event notifications and updates</span>
-                </div>
-              </div>
-              
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Link 
-                  href="/contact?subject=Halal Compass Waitlist" 
-                  className="btn-primary inline-flex items-center space-x-2 group"
-                >
-                  <Mail className="group-hover:scale-110 transition-transform icon-medium" />
-                  <span>Join the Waitlist</span>
-                </Link>
-                <Link 
-                  href="/contact?subject=Halal Compass Early Access" 
-                  className="border-2 border-verj-green text-verj-green px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-verj-green hover:text-white transition-all duration-300 inline-flex items-center space-x-2 group"
-                >
-                  <Download className="group-hover:scale-110 transition-transform icon-medium" />
-                  <span>Get Early Access</span>
-                </Link>
-              </div>
-            </div>
-            
-            {/* Product Visual */}
-            <div className="relative animate-slide-left">
-              <div className="bento-card bento-card-large">
-                <div className="space-y-6">
-                  {/* App preview mockup */}
-                  <div className="bg-verj-navy/80 shape-rounded-lg p-6 border border-verj-green/20">
+
+                  {/* Visual preview */}
+                  <div className="bg-[#07070C]/80 rounded-2xl p-5 border border-white/[0.06]">
                     <div className="flex items-center justify-between mb-4">
-                      <div className="flex items-center space-x-2">
-                        <Compass className="text-verj-green" size={24} />
-                        <span className="text-verj-light font-semibold">Halal Compass</span>
+                      <div className="flex items-center gap-2">
+                        <div className={`${p.iconColor} opacity-80`}>{p.accentIcon}</div>
+                        <span className="text-[0.72rem] text-off-white/50 font-outfit font-medium">{p.name}</span>
                       </div>
-                      <div className="w-2 h-2 bg-verj-green shape-circle animate-pulse-slow"></div>
+                      <div className="w-1.5 h-1.5 rounded-full bg-lime animate-pulse-slow" />
                     </div>
-                    
-                    <div className="space-y-3">
-                      <div className="flex items-center justify-between p-3 bg-verj-green/10 shape-rounded">
-                        <div className="flex items-center space-x-3">
-                          <MapPin className="text-verj-green" size={16} />
-                          <span className="text-verj-light text-sm">Nearby Restaurants</span>
+                    <div className="space-y-2">
+                      {p.features.map((f, i) => (
+                        <div key={i} className="flex items-center justify-between p-2.5 rounded-xl bg-white/[0.03] border border-white/[0.04]">
+                          <div className="flex items-center gap-2">
+                            {f.icon}
+                            <span className="text-[0.75rem] text-off-white/50 font-outfit">{f.label}</span>
+                          </div>
+                          <div className="w-1 h-1 rounded-full bg-lime/40" />
                         </div>
-                        <span className="text-verj-green text-xs">12 found</span>
-                      </div>
-                      <div className="flex items-center justify-between p-3 bg-verj-blue/10 shape-rounded">
-                        <div className="flex items-center space-x-3">
-                          <Star className="text-verj-blue" size={16} />
-                          <span className="text-verj-light text-sm">Halal Grocery Stores</span>
-                        </div>
-                        <span className="text-verj-blue text-xs">8 found</span>
-                      </div>
-                      <div className="flex items-center justify-between p-3 bg-verj-violet/10 shape-rounded">
-                        <div className="flex items-center space-x-3">
-                          <Users className="text-verj-violet" size={16} />
-                          <span className="text-verj-light text-sm">Community Events</span>
-                        </div>
-                        <span className="text-verj-violet text-xs">3 upcoming</span>
-                      </div>
-                    </div>
-                  </div>
-                  
-                  <div className="text-center">
-                    <div className="inline-flex items-center space-x-2 bg-verj-green/20 rounded-full px-4 py-2">
-                      <Download className="text-verj-green" size={16} />
-                      <span className="text-verj-green text-sm font-medium">Launching on App Store</span>
+                      ))}
                     </div>
                   </div>
                 </div>
-              </div>
-            </div>
-          </div>
+              </StaggerItem>
+            ))}
+          </StaggerGrid>
         </div>
       </section>
 
-      {/* Product Philosophy Section */}
-      <section className="spacing-section relative">
-        <div className="max-w-4xl mx-auto px-6 text-center">
-          <div className="bento-card bento-card-gradient-1 animate-fade-in">
-            <div className="relative z-10">
-              <h2 className="text-scale-2 font-bold text-white font-poppins mb-6">
-                We Build What We Believe In
-              </h2>
-              <p className="text-xl text-gray-200 mb-8 max-w-2xl mx-auto font-lato">
-                From AI-powered solutions to creative consumer apps, every product we create 
-                starts with a real problem and a vision for a better solution.
-              </p>
-              <div className="grid md:grid-cols-3 gap-6 mb-8">
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-white mb-2">1</div>
-                  <div className="text-gray-300 text-sm">Product Live</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-white mb-2">2+</div>
-                  <div className="text-gray-300 text-sm">In Development</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-white mb-2">∞</div>
-                  <div className="text-gray-300 text-sm">Ideas Brewing</div>
-                </div>
+      {/* Client work note */}
+      <section className="pb-16">
+        <div className="max-w-7xl mx-auto px-6">
+          <FadeUp>
+            <div className="card-dark flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+              <div>
+                <h3 className="font-bricolage font-bold text-[1.1rem] text-off-white mb-1" style={{ letterSpacing: "-0.015em" }}>
+                  Looking for client work?
+                </h3>
+                <p className="text-[0.82rem] text-off-white/38 font-light">
+                  The above are products Verj Labs owns. For client websites and custom builds, visit the portfolio.
+                </p>
               </div>
-              
-              <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
-                <Link 
-                  href="/services" 
-                  className="bg-white text-verj-navy px-10 py-5 rounded-2xl font-semibold text-lg hover:bg-gray-100 transition-all duration-300 inline-flex items-center space-x-2 group"
-                >
-                  <span>Work With Us</span>
-                  <ArrowRight className="group-hover:translate-x-1 transition-transform" size={20} />
-                </Link>
-                <Link 
-                  href="/contact" 
-                  className="border-2 border-white text-white px-10 py-5 rounded-2xl font-semibold text-lg hover:bg-white hover:text-verj-navy transition-all duration-300"
-                >
-                  Share Your Idea
-                </Link>
-              </div>
+              <Link href="/portfolio" className="btn-secondary flex-shrink-0 inline-flex items-center gap-2 text-sm">
+                View Portfolio <TbArrowRight size={15} />
+              </Link>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Coming Soon Section */}
-      <section className="spacing-section">
-        <div className="max-w-4xl mx-auto px-6">
-          <div className="text-center mb-16">
-            <h2 className="text-scale-2 font-bold mb-6 gradient-text font-poppins">More Products Coming Soon</h2>
-            <p className="text-xl text-verj-muted max-w-2xl mx-auto">
-              We're always building. Stay tuned for more innovative solutions from the Verj Labs workshop.
-            </p>
-          </div>
-          
-          <div className="bento-grid">
-            <div className="bento-card bento-card-medium">
-              <div className="p-4 bg-verj-violet/20 rounded-2xl mb-4 w-fit">
-                <Sparkles className="text-verj-violet icon-large" />
-              </div>
-              <h3 className="content-primary mb-3">AI-Powered Tools</h3>
-              <p className="content-secondary">Smart automation solutions for everyday workflows and business processes.</p>
-            </div>
-            
-            <div className="bento-card bento-card-medium">
-              <div className="p-4 bg-verj-blue/20 rounded-2xl mb-4 w-fit">
-                <Users className="text-verj-blue icon-large" />
-              </div>
-              <h3 className="content-primary mb-3">Community Platforms</h3>
-              <p className="content-secondary">Connecting people through shared interests and meaningful interactions.</p>
-            </div>
-            
-            <div className="bento-card bento-card-medium">
-              <div className="p-4 bg-verj-coral/20 rounded-2xl mb-4 w-fit">
-                <Star className="text-verj-coral icon-large" />
-              </div>
-              <h3 className="content-primary mb-3">Creative Apps</h3>
-              <p className="content-secondary">Tools that empower creativity and help people express themselves digitally.</p>
-            </div>
-          </div>
+          </FadeUp>
         </div>
       </section>
     </div>

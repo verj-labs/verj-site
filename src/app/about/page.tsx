@@ -1,220 +1,187 @@
-
 import Link from "next/link";
-import { 
-  Target, 
-  Rocket, 
-  Heart, 
-  Code,
-  Lightbulb,
-  ArrowRight,
-  Mail,
-  Coffee,
-  Zap,
-  Building,
-  Flag
-} from "lucide-react";
+import { FadeUp, StaggerGrid, StaggerItem } from "@/components/motion";
+import {
+  TbCode, TbDeviceMobile, TbBrain, TbCloud,
+  TbRocket, TbHeart, TbArrowRight,
+} from "react-icons/tb";
+
+const capabilities = [
+  {
+    icon: <TbCode size={26} />,
+    iconColor: "text-lime",
+    iconBg: "bg-lime/10",
+    title: "Full-Stack Web",
+    desc: "React, Next.js, Node.js, NestJS — from design systems to API design. We build the whole stack.",
+  },
+  {
+    icon: <TbDeviceMobile size={26} />,
+    iconColor: "text-purple",
+    iconBg: "bg-purple/10",
+    title: "Mobile Development",
+    desc: "React Native for cross-platform iOS and Android. One codebase, native feel.",
+  },
+  {
+    icon: <TbBrain size={26} />,
+    iconColor: "text-teal",
+    iconBg: "bg-teal/10",
+    title: "AI & Machine Learning",
+    desc: "OpenAI, Claude, RAG pipelines, and custom model integration. AI that works in production.",
+  },
+  {
+    icon: <TbCloud size={26} />,
+    iconColor: "text-amber",
+    iconBg: "bg-amber/10",
+    title: "Cloud & Infrastructure",
+    desc: "AWS, Vercel, Docker, and CI/CD pipelines. Built to scale from day one.",
+  },
+];
 
 export default function About() {
   return (
     <div className="min-h-screen">
-      {/* Hero Section */}
-      <section className="py-20 relative overflow-hidden">
-        <div className="max-w-6xl mx-auto px-6 text-center relative z-10">
-          <div className="animate-fade-in">
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-8 gradient-text font-poppins">
+      {/* Hero */}
+      <section className="relative py-24 overflow-hidden px-6">
+        <div className="mesh-orb-lime absolute w-96 h-96 -top-24 -left-24 pointer-events-none" aria-hidden="true" />
+        <div className="mesh-orb-purple absolute w-80 h-80 top-0 right-0 pointer-events-none" aria-hidden="true" />
+
+        <div className="max-w-4xl mx-auto text-center relative z-10">
+          <FadeUp>
+            <p className="eyebrow mb-4">Who we are</p>
+            <h1 className="text-scale-1 font-bricolage text-off-white mb-5">
               About Verj Labs
             </h1>
-            <p className="text-xl md:text-2xl text-verj-muted max-w-4xl mx-auto leading-relaxed font-lato mb-12">
-              Where bold ideas become real products. We're a small, focused team with big ambitions, 
-              building digital solutions that are actually useful — for people, for businesses, for the world.
+            <p className="text-[1.05rem] text-off-white/45 leading-[1.75] max-w-[540px] mx-auto font-light">
+              A senior-led digital studio that builds SaaS products and custom client solutions.
+              We build lean, we build fast, we ship.
             </p>
-          </div>
-        </div>
-        
-        {/* Background Elements */}
-        <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <div className="floating-shape w-64 h-64 bg-gradient-to-r from-verj-violet to-verj-blue rounded-full top-20 right-20 opacity-5" />
-          <div className="floating-shape w-48 h-48 bg-gradient-to-r from-verj-coral to-verj-green rounded-full bottom-20 left-20 opacity-5" />
+          </FadeUp>
         </div>
       </section>
 
-      {/* Our Story Section */}
-      <section className="py-20 relative">
+      {/* Studio + Philosophy */}
+      <section className="pb-16">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 gradient-text font-poppins">Our Story</h2>
-            <p className="text-xl text-verj-muted max-w-3xl mx-auto">
-              It all started with a problem we wanted to solve — and the belief that our combined expertise could build something better.
-            </p>
-          </div>
-          
-          {/* Story Bento Grid */}
-          <div className="bento-grid">
-            {/* The Beginning */}
-            <div className="bento-card bento-card-large animate-slide-up">
-              <div className="flex items-start space-x-6">
-                <div className="p-4 bg-verj-violet/20 rounded-xl">
-                  <Lightbulb className="text-verj-violet" size={48} />
+          <StaggerGrid className="grid md:grid-cols-2 gap-5" staggerDelay={0.1}>
+            <StaggerItem>
+              <div className="card-dark h-full">
+                <div className="p-3 bg-lime/10 rounded-xl w-fit mb-5">
+                  <TbRocket size={26} className="text-lime" />
                 </div>
-                <div className="flex-1">
-                  <h3 className="content-primary mb-4">The Beginning</h3>
-                  <p className="content-secondary text-lg leading-relaxed">
-                    At Verj Labs, it all started with a problem we wanted to solve — and the belief that our combined expertise could build something better.
-                    We're a small, focused team with big ambitions.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            {/* Team Composition */}
-            <div className="bento-card bento-card-medium animate-slide-up" style={{animationDelay: "0.1s"}}>
-              <div className="text-center">
-                <div className="p-4 bg-verj-blue/20 rounded-xl inline-block mb-4">
-                  <Code className="text-verj-blue" size={40} />
-                </div>
-                <h3 className="content-primary mb-3">Automation Specialist</h3>
-                <p className="content-secondary">
-                  Deep experience in RPA, agentic workflows, and AI-powered systems.
+                <h2 className="font-bricolage font-bold text-[1.3rem] text-off-white mb-4" style={{ letterSpacing: "-0.02em" }}>
+                  What We Are
+                </h2>
+                <p className="text-[0.88rem] text-off-white/42 leading-[1.7] font-light">
+                  Verj Labs is a senior-led studio that ships SaaS products and builds client solutions. We own
+                  products — DealrDash, Zavara Studio, Halal Compass — and we take on client work that fits our
+                  stack and standards. No generalist agencies, no junior-heavy teams.
                 </p>
               </div>
-            </div>
+            </StaggerItem>
 
-            <div className="bento-card bento-card-medium animate-slide-up" style={{animationDelay: "0.2s"}}>
-              <div className="text-center">
-                <div className="p-4 bg-verj-coral/20 rounded-xl inline-block mb-4">
-                  <Building className="text-verj-coral" size={40} />
+            <StaggerItem>
+              <div className="card-dark h-full">
+                <div className="p-3 bg-teal/10 rounded-xl w-fit mb-5">
+                  <TbHeart size={26} className="text-teal" />
                 </div>
-                <h3 className="content-primary mb-3">Software Developer</h3>
-                <p className="content-secondary">
-                  A seasoned engineer who can build just about anything from scratch.
+                <h2 className="font-bricolage font-bold text-[1.3rem] text-off-white mb-4" style={{ letterSpacing: "-0.02em" }}>
+                  How We Work
+                </h2>
+                <p className="text-[0.88rem] text-off-white/42 leading-[1.7] font-light">
+                  We build lean and we build fast — but never at the expense of quality. No bloat, no unnecessary
+                  features, no six-week discovery phases. You get a scoped proposal, a real timeline, and a team
+                  that ships.
                 </p>
               </div>
-            </div>
-
-            {/* Mission */}
-            <div className="bento-card bento-card-large animate-slide-up" style={{animationDelay: "0.3s"}}>
-              <div className="flex items-start space-x-6">
-                <div className="p-4 bg-verj-green/20 rounded-xl">
-                  <Target className="text-verj-green" size={48} />
-                </div>
-                <div className="flex-1">
-                  <h3 className="content-primary mb-4">Our Mission</h3>
-                  <p className="content-secondary text-lg leading-relaxed">
-                    Our mission is simple: to build digital products that are actually useful — for people, for businesses, for the world. 
-                    Whether it's an app we believe in or a tool you need built from the ground up, we bring our skills, vision, and curiosity to every line of code.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
+            </StaggerItem>
+          </StaggerGrid>
         </div>
       </section>
 
-      {/* Canadian Pride Section - Special Highlight */}
-      <section className="py-20 relative">
-        <div className="max-w-4xl mx-auto px-6">
-          <div className="bento-card bento-card-xl bento-card-gradient-1 text-center relative overflow-hidden">
-            {/* Canadian Flag Icon */}
-            <div className="absolute top-6 right-6 opacity-20">
-              <div className="flex items-center space-x-2">
-                <div className="w-8 h-6 border-2 border-white/50 relative">
-                  {/* Simplified flag design */}
-                  <div className="absolute left-0 top-0 w-2 h-full bg-red-500/30"></div>
-                  <div className="absolute right-0 top-0 w-2 h-full bg-red-500/30"></div>
-                  <div className="absolute left-2 right-2 top-1/2 transform -translate-y-1/2">
-                    <div className="w-1 h-1 bg-red-500/50 mx-auto"></div>
+      {/* Team blurb */}
+      <section className="pb-16">
+        <div className="max-w-7xl mx-auto px-6">
+          <FadeUp>
+            <div className="card-dark">
+              <div className="max-w-2xl">
+                <p className="eyebrow mb-4">Our Team</p>
+                <p className="text-[1.05rem] text-off-white/55 leading-[1.75] font-light">
+                  A lean team of senior engineers and builders. No bloat, no juniors on critical work.
+                  The people scoping your project are the same people building it. Experience across
+                  product companies and enterprise software — shipped to real users, at scale.
+                </p>
+              </div>
+            </div>
+          </FadeUp>
+        </div>
+      </section>
+
+      {/* Capabilities */}
+      <section className="pb-16">
+        <div className="max-w-7xl mx-auto px-6">
+          <FadeUp className="mb-10">
+            <p className="eyebrow mb-3">Capabilities</p>
+            <h2 className="text-scale-2 font-bricolage text-off-white">The full stack.</h2>
+          </FadeUp>
+
+          <StaggerGrid className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5" staggerDelay={0.09}>
+            {capabilities.map((cap) => (
+              <StaggerItem key={cap.title}>
+                <div className="card-dark h-full text-center flex flex-col items-center">
+                  <div className={`p-4 ${cap.iconBg} rounded-2xl mb-4 ${cap.iconColor}`}>
+                    {cap.icon}
                   </div>
+                  <h3 className="font-bricolage font-bold text-[1rem] text-off-white mb-3" style={{ letterSpacing: "-0.01em" }}>
+                    {cap.title}
+                  </h3>
+                  <p className="text-[0.8rem] text-off-white/38 leading-[1.65] font-light">{cap.desc}</p>
                 </div>
-              </div>
-            </div>
-            
-            <div className="max-w-3xl mx-auto relative z-10">
-              <Flag className="text-white mx-auto mb-6" size={64} />
-              <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white font-poppins">
-                We're proudly Canadian.
-                <br />
-                <span className="text-3xl md:text-4xl">And proudly different.</span>
+              </StaggerItem>
+            ))}
+          </StaggerGrid>
+        </div>
+      </section>
+
+      {/* Canadian pride */}
+      <section className="pb-16">
+        <div className="max-w-7xl mx-auto px-6">
+          <FadeUp>
+            <div className="card-dark text-center py-12">
+              <div className="text-5xl mb-5">🍁</div>
+              <h2 className="font-bricolage font-extrabold text-[2rem] text-off-white mb-3" style={{ letterSpacing: "-0.03em" }}>
+                Proudly Canadian.
               </h2>
-              <p className="text-xl text-gray-200 leading-relaxed">
-                Our working style is casual, creative, and deeply collaborative — just two friends using tech to make good things happen. 
-                If you're looking for flashy jargon and bloated agencies, we're probably not your fit. 
-                But if you want thoughtful builders who care about what they ship — welcome to Verj Labs.
+              <p className="text-[0.95rem] text-off-white/42 font-light max-w-md mx-auto leading-relaxed">
+                Incorporated in Canada. Remote-first. Building products that work for people everywhere.
               </p>
-              <p className="text-sm text-gray-300 mt-4 opacity-75">
-                16930760 Canada Inc. operating as Verj Labs
-              </p>
+              <p className="text-[0.72rem] text-off-white/22 mt-4">Verj Labs Inc.</p>
             </div>
-
-            {/* Background Canadian-themed elements */}
-            <div className="absolute inset-0 overflow-hidden pointer-events-none">
-              <div className="floating-shape w-32 h-32 bg-red-500/10 rounded-full top-10 left-10 animate-float" />
-              <div className="floating-shape w-24 h-24 bg-white/5 rounded-full bottom-10 right-20 animate-gentle-bounce" />
-            </div>
-          </div>
+          </FadeUp>
         </div>
       </section>
 
-      {/* Values Section */}
-      <section className="py-20 relative">
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 gradient-text font-poppins">What Drives Us</h2>
-            <p className="text-xl text-verj-muted max-w-3xl mx-auto">
-              Together, we decided to stop waiting for the right opportunity and start creating it.
-            </p>
-          </div>
-          
-          {/* Values Grid */}
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className="bento-card bento-card-small text-center animate-fade-in">
-              <Heart className="text-verj-coral mx-auto mb-4" size={48} />
-              <h3 className="content-primary mb-4">Purpose-Driven</h3>
-              <p className="content-secondary">
-                We build what we believe in. Every project starts with purpose and ends with impact.
+      {/* CTA */}
+      <FadeUp>
+        <div className="max-w-7xl mx-auto px-6 pb-24">
+          <div className="cta-band">
+            <div>
+              <h2 className="font-bricolage font-extrabold text-[clamp(1.6rem,3.5vw,2.4rem)] text-bg mb-1.5" style={{ letterSpacing: "-0.03em" }}>
+                Ready to work together?
+              </h2>
+              <p className="text-[0.9rem] text-bg/55 font-outfit">
+                Tell us what you&apos;re building. We&apos;ll tell you if we&apos;re the right fit.
               </p>
             </div>
-            
-            <div className="bento-card bento-card-small text-center animate-fade-in" style={{animationDelay: "0.1s"}}>
-              <Coffee className="text-verj-blue mx-auto mb-4" size={48} />
-              <h3 className="content-primary mb-4">Collaborative</h3>
-              <p className="content-secondary">
-                Casual, creative, and deeply collaborative — we're just friends making good things happen.
-              </p>
-            </div>
-            
-            <div className="bento-card bento-card-small text-center animate-fade-in" style={{animationDelay: "0.2s"}}>
-              <Zap className="text-verj-violet mx-auto mb-4" size={48} />
-              <h3 className="content-primary mb-4">Thoughtful Builders</h3>
-              <p className="content-secondary">
-                No flashy jargon or bloated processes. Just thoughtful builders who care about what they ship.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="py-20 relative">
-        <div className="max-w-4xl mx-auto px-6 text-center">
-          <div className="bento-card bento-card-large bento-card-gradient-2">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-white font-poppins">Ready to Build Something Great?</h2>
-            <p className="text-xl text-gray-200 mb-8">
-              Whether you have an idea that needs building or want to explore what we're creating, let's start a conversation.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/contact" className="btn-secondary group">
-                <Mail className="mr-2 group-hover:scale-110 transition-transform" size={18} />
-                Get in Touch
+            <div className="flex gap-3 flex-wrap">
+              <Link href="/contact" className="btn-lime-inv">
+                Get in Touch &rarr;
               </Link>
-              <Link href="/products" className="btn-primary group">
-                <Rocket className="mr-2 group-hover:scale-110 transition-transform" size={18} />
-                See Our Products
-                <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" size={18} />
+              <Link href="/portfolio" className="bg-white/15 text-bg font-outfit font-semibold text-sm px-6 py-3.5 rounded-full hover:bg-white/25 transition-colors inline-flex items-center gap-2">
+                See Our Work <TbArrowRight size={16} />
               </Link>
             </div>
           </div>
         </div>
-      </section>
+      </FadeUp>
     </div>
   );
 }
