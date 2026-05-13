@@ -10,6 +10,8 @@ const techStack = [
   "React", "Next.js", "TypeScript", "Node.js", "NestJS",
   "PostgreSQL", "AWS", "React Native", "Python", "OpenAI",
   "Tailwind CSS", "Docker", "Vercel", "Prisma", "DynamoDB",
+  "GraphQL", "Redis", "Stripe", "Supabase", "Expo",
+  "Claude AI", "LangChain", "Terraform", "GitHub Actions", "tRPC",
 ];
 
 const workCards = [
@@ -71,13 +73,15 @@ export default function Home() {
     <div className="min-h-screen">
       <HeroSection />
 
-      {/* Stack strip */}
-      <div className="stack-strip">
-        <span className="stack-lbl">Stack</span>
-        <div className="flex items-center gap-2 flex-wrap">
-          {techStack.map((t) => (
-            <span key={t} className="tech-pill">{t}</span>
-          ))}
+      {/* Stack strip — marquee */}
+      <div className="stack-strip overflow-hidden">
+        <span className="stack-lbl flex-shrink-0">Stack</span>
+        <div className="flex-1 overflow-hidden relative">
+          <div className="flex items-center gap-2 animate-marquee whitespace-nowrap w-max">
+            {[...techStack, ...techStack].map((t, i) => (
+              <span key={`${t}-${i}`} className="tech-pill">{t}</span>
+            ))}
+          </div>
         </div>
       </div>
 

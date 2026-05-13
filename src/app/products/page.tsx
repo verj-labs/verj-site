@@ -8,26 +8,6 @@ import {
 
 const products = [
   {
-    name: "The Halal Compass",
-    url: "https://www.thehalalcompass.com",
-    urlLabel: "thehalalcompass.com",
-    tagline: "Find everything halal — near you.",
-    desc: "A one-stop consumer platform for the Muslim community. Discover halal restaurants, grocery stores, mosques, events, and gift shops through interactive maps, curated listings, and community-driven reviews.",
-    features: [
-      { icon: <TbMapPin size={15} className="text-teal" />, label: "Location-based discovery with maps" },
-      { icon: <TbStar size={15} className="text-teal" />, label: "Curated listings and community reviews" },
-      { icon: <TbUsers size={15} className="text-teal" />, label: "Community-driven recommendations" },
-      { icon: <TbBell size={15} className="text-teal" />, label: "Event notifications and updates" },
-    ],
-    stack: ["Next.js", "NestJS", "React Native", "PostgreSQL"],
-    glassVariant: "card-glass card-glass-teal",
-    iconColor: "text-teal",
-    iconBg: "bg-teal/10",
-    accentIcon: <TbCompass size={32} />,
-    badge: "badge-teal",
-    badgeLabel: "Consumer App",
-  },
-  {
     name: "DealrDash",
     url: "https://www.dealrdash.com",
     urlLabel: "dealrdash.com",
@@ -66,6 +46,26 @@ const products = [
     accentIcon: <TbDiamond size={32} />,
     badge: "badge-lime",
     badgeLabel: "B2B SaaS",
+  },
+  {
+    name: "The Halal Compass",
+    url: "https://www.thehalalcompass.com",
+    urlLabel: "thehalalcompass.com",
+    tagline: "Find everything halal — near you.",
+    desc: "A one-stop consumer platform for the Muslim community. Discover halal restaurants, grocery stores, mosques, events, and gift shops through interactive maps, curated listings, and community-driven reviews.",
+    features: [
+      { icon: <TbMapPin size={15} className="text-teal" />, label: "Location-based discovery with maps" },
+      { icon: <TbStar size={15} className="text-teal" />, label: "Curated listings and community reviews" },
+      { icon: <TbUsers size={15} className="text-teal" />, label: "Community-driven recommendations" },
+      { icon: <TbBell size={15} className="text-teal" />, label: "Event notifications and updates" },
+    ],
+    stack: ["Next.js", "NestJS", "React Native", "PostgreSQL"],
+    glassVariant: "card-glass card-glass-teal",
+    iconColor: "text-teal",
+    iconBg: "bg-teal/10",
+    accentIcon: <TbCompass size={32} />,
+    badge: "badge-teal",
+    badgeLabel: "Consumer App",
   },
 ];
 

@@ -69,7 +69,9 @@ const projects: Project[] = [
     shine: "bg-[radial-gradient(circle,rgba(29,210,160,0.08)_0%,transparent_70%)]",
   },
   {
-    name: "Dealership Website",
+    name: "SF Legacy Motors",
+    url: "https://www.sflegacymotors.com",
+    urlLabel: "sflegacymotors.com",
     category: "Client Work",
     tagline: "Custom web presence + CMS for an automotive dealership.",
     story: "Full website build for a car dealership client — custom inventory display, lead capture forms, and a Sanity CMS backend so the client can manage listings without touching code.",
@@ -81,7 +83,9 @@ const projects: Project[] = [
     shine: "bg-[radial-gradient(circle,rgba(250,180,50,0.07)_0%,transparent_70%)]",
   },
   {
-    name: "Jeweller Website",
+    name: "Zebaish",
+    url: "https://www.zebaish.ca",
+    urlLabel: "zebaish.ca",
     category: "Client Work",
     tagline: "Bespoke showcase site for a jewellery client.",
     story: "High-end showcase and e-commerce site for a jewellery business. Sanity CMS backend lets the client update collections independently. Custom design focused on product photography presentation.",

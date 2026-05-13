@@ -8,29 +8,21 @@ import {
 const capabilities = [
   {
     icon: <TbCode size={26} />,
-    iconColor: "text-lime",
-    iconBg: "bg-lime/10",
     title: "Full-Stack Web",
     desc: "React, Next.js, Node.js, NestJS — from design systems to API design. We build the whole stack.",
   },
   {
     icon: <TbDeviceMobile size={26} />,
-    iconColor: "text-purple",
-    iconBg: "bg-purple/10",
     title: "Mobile Development",
     desc: "React Native for cross-platform iOS and Android. One codebase, native feel.",
   },
   {
     icon: <TbBrain size={26} />,
-    iconColor: "text-teal",
-    iconBg: "bg-teal/10",
     title: "AI & Machine Learning",
     desc: "OpenAI, Claude, RAG pipelines, and custom model integration. AI that works in production.",
   },
   {
     icon: <TbCloud size={26} />,
-    iconColor: "text-amber",
-    iconBg: "bg-amber/10",
     title: "Cloud & Infrastructure",
     desc: "AWS, Vercel, Docker, and CI/CD pipelines. Built to scale from day one.",
   },
@@ -109,6 +101,7 @@ export default function About() {
                   The people scoping your project are the same people building it. Experience across
                   product companies and enterprise software — shipped to real users, at scale.
                 </p>
+                <p className="text-[0.72rem] text-off-white/22 font-outfit mt-5">Verj Labs Inc. · Incorporated in Canada · Remote-first</p>
               </div>
             </div>
           </FadeUp>
@@ -127,7 +120,7 @@ export default function About() {
             {capabilities.map((cap) => (
               <StaggerItem key={cap.title}>
                 <div className="card-dark h-full text-center flex flex-col items-center">
-                  <div className={`p-4 ${cap.iconBg} rounded-2xl mb-4 ${cap.iconColor}`}>
+                  <div className="p-4 bg-lime/10 rounded-2xl mb-4 text-lime">
                     {cap.icon}
                   </div>
                   <h3 className="font-bricolage font-bold text-[1rem] text-off-white mb-3" style={{ letterSpacing: "-0.01em" }}>
@@ -138,24 +131,6 @@ export default function About() {
               </StaggerItem>
             ))}
           </StaggerGrid>
-        </div>
-      </section>
-
-      {/* Canadian pride */}
-      <section className="pb-16">
-        <div className="max-w-7xl mx-auto px-6">
-          <FadeUp>
-            <div className="card-dark text-center py-12">
-              <div className="text-5xl mb-5">🍁</div>
-              <h2 className="font-bricolage font-extrabold text-[2rem] text-off-white mb-3" style={{ letterSpacing: "-0.03em" }}>
-                Proudly Canadian.
-              </h2>
-              <p className="text-[0.95rem] text-off-white/42 font-light max-w-md mx-auto leading-relaxed">
-                Incorporated in Canada. Remote-first. Building products that work for people everywhere.
-              </p>
-              <p className="text-[0.72rem] text-off-white/22 mt-4">Verj Labs Inc.</p>
-            </div>
-          </FadeUp>
         </div>
       </section>
 

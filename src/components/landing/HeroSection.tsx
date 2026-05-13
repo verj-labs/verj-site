@@ -103,10 +103,11 @@ const HeroSection = () => {
             transition={{ duration: 0.6, delay: 0.45 }}
           >
             {[
-              { num: "3", label: "Live SaaS Products" },
+              { num: "2", label: "Live SaaS Products" },
+              // { num: "3", label: "Live SaaS Products" },
               { num: "5+", label: "Client Builds" },
               { num: "B2B", label: "& Consumer" },
-              { num: "🍁", label: "Proudly Canadian" },
+              // { num: "Senior", label: "Engineers only" },
             ].map((s) => (
               <div key={s.label}>
                 <div className="font-bricolage font-extrabold text-[2rem] text-lime leading-none tracking-tight" style={{ letterSpacing: "-0.03em" }}>
